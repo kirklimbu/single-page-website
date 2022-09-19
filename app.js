@@ -25,7 +25,7 @@ function initMap() {
     const unified_damak_location = { lat: 26.66221, lng: 87.69396 };
     // The map, centered at Uluru
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 17,
+      zoom: 16,
       center: unified_damak_location,
     });
     // The marker, positioned at Uluru
@@ -48,22 +48,7 @@ function initMap() {
     const iconBase = "https://maps.google.com/mapfiles/kml/shapes/";
 
     const branches =[
-      // {
-      //   name: "Dudhe",
-      //   latlng: '26.64878218296987, 87.8259752288355',
-      // },
-      //  {
-      //   name: "Shiva satakshi",
-      //   latlng: '26.64878218296987, 87.8259752288355',
-      // },
-      //  {
-      //   name: "Panch gachi",
-      //   latlng: '26.64878218296987, 87.8259752288355',
-      // },
-      //  {
-      //   name: "Haldi bari",
-      //   latlng: '26.64878218296987, 87.8259752288355',
-      // },
+      
       {
         name:'Damak',
         latlng:'',
@@ -113,23 +98,36 @@ function initMap() {
       {
         position: new google.maps.LatLng(26.64878218296987, 87.8259752288355),
         type: "info",
+        name:'Unified Communications, Dudhe'
         
       },
+      // JRXM+35V, शिवसताक्षी 57200
        {
         position: new google.maps.LatLng(26.647698626323077, 87.83324769098466),
         type: "info",
+        name:'Unified Communications, Shiva Satakshi (शिवसताक्षी)'
+
         
       },
        {
         position: new google.maps.LatLng(26.53399668205423, 87.79715769708092),
         type: "info",
-        
+        name:'Unified Communications, Panch-gachhi'
+
       },
        {
         position: new google.maps.LatLng(26.553996586195744, 87.96087462591693),
         type: "info",
-        
+        name:'Unified Communications, Haldibari'
+
       },
+      {
+        position: new google.maps.LatLng( 26.686009853350264, 87.9915935624223),
+        type: "info",
+        name:'Unified Communications, Arjundhara'
+
+      },
+      
     ]
 
   
@@ -137,6 +135,8 @@ function initMap() {
     new google.maps.Marker({
       position: feature.position,
       // icon: icons[feature.type].icon,
+      title: feature.name,
+      animation: google.maps.Animation.DROP,
       map: map,
     });
   });
@@ -144,7 +144,6 @@ function initMap() {
   
   const legend = document.getElementById("legend");
 
-  console.log(branches)
   for (const value of branches) {
     // const type = icons[key];
     const name = value.name;
@@ -153,9 +152,18 @@ function initMap() {
     div.innerHTML =  `<ul><li><img src="' + ${icon} + '"> 
     <strong> ${name}</strong></li></ul>`;
     legend.appendChild(div);
+
+    google.maps.event.addListener(marker, 'click', (function(marker, value) {
+      console.log('map clicked',marker,value)
+      return function() {
+        // infowindow.setContent(value);
+        // infowindow.open(map, marker);
+      }
+    })(marker, value));
   }
 
-  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+
+  map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
   // scroll to top section
 
   var scrollToTopBtn = document.getElementById("scrollToTopBtn");
