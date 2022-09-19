@@ -4,20 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
-
-
-    <link rel="stylesheet" href="style.css">
+    <!-- fontawsome 5 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+    <!-- leaflet map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
     <title>Unified Communications</title>
 </head>
 
 <body>
-    <section id="header">
+    <header id="header">
         <div class="header">
+            <div class="top-bar ">
+                <a href="https://www.facebook.com/UnifiedCommunicationNepal/" target="_blank"
+                    rel="noopener noreferrer"><i class="fab fa-facebook fa-xs"></i></a>
+                <a href="https://www.instagram.com/unifiedcommunicationnepal/" target="_blank"
+                    rel="noopener noreferrer"><i class="fab fa-instagram fa-xs"></i></a>
+                <a href="https://www.linkedin.com/company/unified-communication-pvt-ltd/" target="_blank"><i
+                        class="fab fa-linkedin-in fa-xs"></i></a>
+                <!-- <a href=""><i class="fab fa-twitter fa-xs"></i></a> -->
+                <!-- <a href=""><i class="fab fa-youtube fa-xs"></i> </a> -->
+
+            </div>
             <div class="nav-bar">
                 <div class="brand-logo">
                     <a href="#"><img src="assets/logo.jpeg" alt="logo" /></a>
@@ -38,12 +59,150 @@
                 </div>
             </div>
         </div>
+    </header>
 
+    <section id="banner">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <!-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div> -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/banner_3.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption ">
+                        <!-- <h5>First slide label</h5> -->
+                        <div>
+                            <span>रोजेको इन्टरनेट सेवा</span>
+                            <h5 class="nepali-txt">खोजेको मूल्यमा</h5>
+                        </div>
+
+
+                        <div class="banner-btn d-none d-md-block">
+                            <div class="btn btn-1">Our Services</div>
+                            <div class="btn btn-2">More Info</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <img src="assets/banner 4.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption ">
+                        <div class="banner-text">
+                            <span>भरपर्दो छ</span>
+                            <h5>INTERNET</h5>
+                            <span>अनि किफायती</span>
+                            <h5>RATE</h5>
+                        </div>
+
+
+                        <div class="banner-btn d-none d-md-block">
+                            <div class="btn btn-1">Our Services</div>
+                            <div class="btn btn-2">More Info</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <img src="assets/banner 1.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption ">
+                        <div class="banner-text">
+                            <span>भरपर्दो छ</span>
+                            <h5>INTERNET</h5>
+                            <span>अनि किफायती</span>
+                            <h5>RATE</h5>
+                        </div>
+
+
+                        <div class="banner-btn d-none d-md-block">
+                            <div class="btn btn-1">Our Services</div>
+                            <div class="btn btn-2">More Info</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <img src="assets/banner 2.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption ">
+                        <div class="banner-text">
+                            <span>भरपर्दो छ</span>
+                            <h5>INTERNET</h5>
+                            <span>अनि किफायती</span>
+                            <h5>RATE</h5>
+                        </div>
+
+
+                        <div class="banner-btn d-none d-md-block">
+                            <div class="btn btn-1">Our Services</div>
+                            <div class="btn btn-2">More Info</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <!-- why unified communications -->
+    <section id="why-us">
+        <span> Why choose <strong>Unified Communications? </strong></span>
+
+        <div class="why-us-container">
+            <div class="card why-us-item">
+                <div class="card-body">
+                    <i class="fas fa-network-wired"></i>
+                    <span>World Class Fibre Internet</span>
+                </div>
+            </div>
+            <div class="card why-us-item">
+                <div class="card-body">
+                    <!-- <i class="fas fa-wifi"></i> -->
+                    <i class="fas fa-broadcast-tower"></i>
+                    <span>High Frequency Bandwidth</span>
+                </div>
+            </div>
+            <div class="card why-us-item">
+                <div class="card-body">
+                    <i class="fas fa-fighter-jet"></i>
+                    <span>Fast & reliable</span>
+                </div>
+            </div>
+            <div class="card why-us-item">
+                <div class="card-body">
+                    <i><strong>99.</strong><small>99%</small></i>
+                    <span>uptime</span>
+                </div>
+            </div>
+            <div class="card why-us-item">
+                <div class="card-body">
+                    <i> <strong>24x7</strong>
+                    </i>
+                    <span>Customer support </span>
+                </div>
+            </div>
+            <div class="card why-us-item">
+                <div class="card-body">
+                    <i class="fas fa-tv "></i>
+                    <span>Internet and <span class="net">Net</span>TV packages </span>
+                </div>
+            </div>
+
+        </div>
     </section>
 
-
-
-    <section id="welcome" class="grid">
+    <!-- <section id="welcome" class="grid">
+        <div class="fb-page" data-href="www.facebook.com/UnifiedCommunicationNepal/" data-width="340"
+            data-hide-cover="false" data-show-facepile="true"></div>
         <div class="welcome-text">
             <h2>Introduction</h2>
             <p class="leading">
@@ -56,46 +215,83 @@
             <a href="#portfolio" class="button">View my work</a>
         </div>
         <div class="welcome-img">
-            <!-- <img src="assets/list of services.png" alt=""> -->
+
+        </div>
+    </section> -->
+
+    <section id="packages">
+        <h3> <strong>Our Packages</strong> </h3>
+        <div class="packages">
+            <div class="package">
+                <a href="">
+                    <img src="assets/20 mbps.png" alt="">
+                    <h5>View more</h5>
+                </a>
+            </div>
+
+            <div class="package">
+                <a href="">
+                    <img src="assets/service_1.png" alt="">
+                    <!-- <h4>Hotliner number</h4> -->
+                    <h5>View more</h5>
+
+                </a>
+            </div>
+
+            <div class="package">
+                <a href="">
+                    <img src="assets/package list.png" alt="">
+                    <!-- <h4>Hotliner number</h4> -->
+                    <h5>View more</h5>
+
+                </a>
+            </div>
+
+            <div class="package">
+                <a href="">
+                    <img src="assets/30mbps.png" alt="">
+                    <!-- <h4>Hotliner number</h4> -->
+                    <h5>View more</h5>
+
+                </a>
+            </div>
+
         </div>
     </section>
-    <section id="portfolio">
-        <h3>Services</h3>
-        <div class="projects grid">
+
+    <section id="coverage-area">
+        <div id="legend">
+            <h3>Branches</h3>
+        </div>
+
+        <div class="service-area">
             <a href="">
-                <img src="assets/hotliner number.png" alt="">
-                <h4>Hotliner number</h4>
-            </a><a href="">
-                <img src="assets/hotliner number.png" alt="">
-                <h4>Hotliner number</h4>
-            </a><a href="">
-                <img src="assets/hotliner number.png" alt="">
-                <h4>Hotliner number</h4>
+                <img src="assets/dedicated service-1.png" alt="">
+                <!-- <h4>Hotliner number</h4> -->
+                <!-- <h5>View more</h5> -->
+
             </a>
-
-
         </div>
+
+
+
+    </section>
+    <!-- 
+
+        dudhe: 26.64878218296987, 87.8259752288355,
+        shiva satakshi :26.647698626323077, 87.83324769098466,
+        panch gachi: 26.53399668205423, 87.79715769708092,
+        haldi bari: 26.553996586195744, 87.96087462591693
+     -->
+
+    <section id="office-map">
+        <h3>Our office</h3>
+
+        <div id="map"></div>
+
     </section>
 
-    <section id="skills">
-        <h3>Services</h3>
-        <ul class="grid">
-            <!-- <li>
-                <img src="assets/services2.png" alt="services">
-                <h4>Javascript</h4>
-            </li>
-            <li>
-                <img src="assets/services3.png" alt="services">
-                <h4>Javascript</h4>
-            </li>
-            <li>
-                <img src="assets/services2.png" alt="services">
-                <h4>Javascript</h4>
-            </li> -->
-
-        </ul>
-    </section>
-    <section id="contact">
+    <!-- <section id="contact">
         <h3>Contact</h3>
         <p class="leading"> 023-597005
         </p>
@@ -105,22 +301,170 @@
             <textarea name="" id="" cols="30" rows="10" placeholder="Your message"></textarea>
             <button class="button">Send</button>
         </form>
-    </section>
+    </section> -->
 
-    <footer>
-        <div class="grid">
-            <p class="copyright">
-                Copyright 2021 Unified Communications
-            </p>
-            <ul class="social">
-                <!-- <li><a href=""><img src="assets/sologan.png" alt=""></a></li> -->
-            </ul>
-        </div>
-    </footer>
-    <script src="app.js"></script>
+    <section>
+        <!-- Footer -->
+
+        <footer class="">
+            <div class="footer-newsletter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-7">
+                            <form id="newsletter-validate-detail" method="post" action="#">
+                                <h3 class="hidden-sm">Sign up for newsletter</h3>
+                                <div class="newsletter-inner mt-4">
+                                    <input class="newsletter-email" name="Email" placeholder="Enter Your Email" />
+                                    <button class="button subscribe ml-4" type="submit" title="Subscribe">
+                                        Subscribe
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="social col-md-4 col-sm-5 mt-4">
+                            <ul class="inline-mode">
+
+                                <li class="social-network fb" title="Facebook page">
+                                    <a href="https://www.facebook.com/UnifiedCommunicationNepal/" target="_blank"
+                                        rel="noopener noreferrer"><i class="fab fa-facebook fa-lg"></i></a>
+                                </li>
+                                <li class="social-network googleplus" title="Instagram page">
+                                    <a href="https://www.instagram.com/unifiedcommunicationnepal/" target="_blank"
+                                        rel="noopener noreferrer"><i class="fab fa-instagram fa-lg"></i></a>
+                                </li>
+                                <li class="social-network googleplus" title="Linkedin page">
+                                    <a href="https://www.linkedin.com/company/unified-communication-pvt-ltd/"
+                                        target="_blank"><i class="fab fa-linkedin-in  fa-lg"></i></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-xs-12 col-lg-3 collapsed-block">
+                        <div class="brand-logo">
+                            <a href="#"><img src="assets/logo.jpeg" alt="fotter logo" /></a>
+                        </div>
+                        <p>
+                            Unified Communication Pvt. Ltd is a licensed Internet Service Provider (ISP), Network Store
+                            and IT solution was formed in April 2016 in eastern part of Nepal.
+                        </p>
+                        <div class="footer-content">
+                            <div class="email">
+                                <i class="fa fa-envelope"></i>
+                                <p>info@unicom.net.np</p>
+                            </div>
+                            <div class="phone">
+                                <i class="fa fa-phone"></i>
+                                <p>023-597005</p>
+                            </div>
+                            <div class="address">
+                                <i class="fa fa-map-marker"></i>
+                                <p>Damak</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-2 col-xs-12 col-lg-3 collapsed-block">
+                        <div class="footer-links">
+                            <h3 class="links-title">
+                                Service<a class="expander visible-xs" href="#TabBlock-4"></a>
+                            </h3>
+                            <div class="tabBlock" id="TabBlock-4">
+                                <ul class="list-links list-unstyled">
+                                    <li><a href="#">Internet</a></li>
+                                    <li><a href="#">NetTv</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-xs-12 col-lg-3 collapsed-block">
+                        <div class="footer-links">
+                            <h3 class="links-title">
+                                Information<a class="expander visible-xs" href="#TabBlock-1"></a>
+                            </h3>
+                            <div class="tabBlock" id="TabBlock-1">
+                                <ul class="list-links list-unstyled">
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Fair Usage Policy</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                    <li><a href="#">Terms &amp; Condition</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-xs-12 col-lg-3 collapsed-block">
+                        <div class="footer-links">
+                            <h3 class="links-title">
+                                About Us<a class="expander visible-xs" href="#TabBlock-3"></a>
+                            </h3>
+                            <div class="tabBlock" id="TabBlock-3">
+                                <ul class="list-links list-unstyled">
+                                    <li><a href="#"> Map </a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer-coppyright">
+                <div class="container">
+                    <div class="row">
+                        <!-- <div class="col-sm-6 col-xs-12 coppyright">
+                            Copyright © {{ dateService.getDate() | date: "yyyy" }}
+                            <a href="#"> Ecommerce </a>. All Rights Reserved.
+                        </div> -->
+                        <!-- <div class="col-sm-6 col-xs-12">
+                            <div class="payment">
+                                <ul>
+                                    <li>
+                                        <a href="#"><img title="Visa" alt="Visa" src="assets/images/visa.png" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img title="Paypal" alt="Paypal"
+                                                src="assets/images/paypal.png" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img title="Discover" alt="Discover"
+                                                src="assets/images/discover.png" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img title="Master Card" alt="Master Card"
+                                                src="assets/images/master-card.png" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- <button id="scrollToTopBtn">☝️</button> -->
+        </footer>
+
+
+        <!-- End Footer -->
+
+
+        <!-- <button class="btn btn-style" onclick="scroll2Top()" id="btn" title="Go to top">Top</button> -->
+    </section>
+    <script type="module" src="app.js"></script>
+    <!-- fontawsome 5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+    <!-- owl carousel -->
+    <script src="jquery.min.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDaWLenc_eAZKJuNNZMb6vaJ12OIqm6YM&callback=initMap"></script>
+
 </body>
 
 
