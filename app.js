@@ -19,7 +19,7 @@ hamburger.addEventListener('click', ()=>{
 
 
 function initMap() {
-    console.log('calling google maps')
+    // console.log('calling google maps')
 // 26.662209494579614, 87.69396259131017
     // The location of Uluru
     const unified_damak_location = { lat: 26.66221, lng: 87.69396 };
@@ -154,7 +154,7 @@ function initMap() {
     legend.appendChild(div);
 
     google.maps.event.addListener(marker, 'click', (function(marker, value) {
-      console.log('map clicked',marker,value)
+      // console.log('map clicked',marker,value)
       return function() {
         // infowindow.setContent(value);
         // infowindow.open(map, marker);
@@ -178,4 +178,49 @@ function initMap() {
   }
 }
   window.initMap = initMap;
+
+  // send mail
+  // info@unicom.net.np
+   function sendEmail() {
+    console.log('calling send email')
+   try {
+     Email.send({
+      Host: "smtp.gmail.com",
+      Username: "testbikramlimbu@gmail.com",
+      Password: "T35t@1234",
+      To: 'kirklimbu@gmail.com',
+      From: document.getElementById('fullName'),
+      Subject: "Customer Inquery",
+      Body: 
+      `Name:${document.getElementById(fullName).value}
+      <br/>
+      email:${document.getElementById(email).value}
+       <br/>
+       phone:${document.getElementById(phone).value}
+       <br/>
+      Description:${document.getElementById(message).value}
+      `,
+      Attachments: [
+        {
+          name: "File_Name_with_Extension",
+          path: "Full Path of the file"
+        }]
+    })
+    .then(function (message) {
+      alert("mail sent successfully")
+    })
+    .catch(function (error){
+      console.log('error',error)
+      alert("error",error)
+
+    })
+
+    // console.log('mailResponse',mailResponse)
+    // mailResponse && alert("Mail has been sent successfully")
+   } catch (error) {
+     console.log('error',error)
+   }
+
+     
+  }
   

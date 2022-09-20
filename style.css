@@ -56,6 +56,10 @@ textarea {
   border-radius: 20px;
   border: 2px solid #9893d9;
 }
+.required:after {
+  content: " *";
+  color: var(--primary);
+}
 
 .brand h1 {
   font-size: 3rem;
@@ -339,7 +343,7 @@ box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
   left: 0;
   bottom: 0;
   right: 0;
-  background-color:#454545
+  /* background-color:#454545 */
 
   ;
   opacity: 0.7;
@@ -532,6 +536,137 @@ color:var(--primary)
   text-underline-offset:4px;
 
   }
+  /* begin::contact us section */
+  #contact-us{
+    background-color: #fff;
+	color: #999;
+	line-height: 2;
+  padding:20px;
+  margin: 20px;
+
+  
+  }
+  #contact-us h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+
+    color: #000;
+  }
+  .text-black {
+    color: #000;
+  }
+
+  #contact-us .content {
+    padding: 7rem 0;
+  }
+
+  #contact-us h3 {
+    /* font-size: 3.5rem; */
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    color: var(--primary);
+    text-decoration: underline 2px var(--quaternary);
+    text-underline-offset: .5rem;
+    
+  }
+  #contact-us p{
+    line-height:1.5em;
+
+  }
+
+  #contact-us h5{
+    margin-top: 1.5rem;
+    font-weight: 500;
+    font-size:1rem; 
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    text-decoration: underline 2px solid var(--primary);
+    text-underline-offset: .5rem;
+
+  }
+
+  #contact-us ul{
+    padding:0;
+    margin: 0;
+    font-size:1rem;
+  }
+
+  #contact-us li{
+  color:black;
+  /* font-weight:400; */
+  }
+
+  #contact-us .contact-form{
+    margin-top: 60px;
+  }
+
+    
+  
+  .btn:active:focus {
+		outline: none!important;
+		box-shadow: none!important;
+	}
+
+.form-control {
+    border: 1px solid lighten(#ccc, 5%);
+    height: 55px ;
+    border-radius:0!important;
+    margin-bottom:10px;
+  }
+
+  .form-control:active,:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #000;
+  }
+  .col-form-label {
+    color: #000;
+    font-weight: 500;
+    font-size:1rem; 
+    text-transform:uppercase;
+
+  }
+
+  #contact-us .button  {
+    height: 55px;
+    background:var(--primary) !important;
+    color: white!important;
+  }
+
+  #contact-us .button:hover{
+    outline: none;
+    box-shadow: none;
+    background: #000!important;
+  }
+
+  
+
+label.error {
+	font-size: 12px;
+	color: red;
+}
+
+#message {
+	resize: vertical;
+  height:150px;
+}
+#form-message-warning, #form-message-success {
+	display: none;
+}
+#form-message-warning {
+	color: #B90B0B;
+}
+#form-message-success {
+	color: #55A44E;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
+  
+  
+
+  /* end::contact us section */
 
 /* footer */
 footer h3 {
@@ -1115,6 +1250,148 @@ color:var(--primary)
     margin-top: 0;
     font-size: small;
   }
+  /* begin::contact-us large screen */
+  #contact-us{
+	line-height: 2;
+  padding:20;
+  margin: 20px;
+  background: var(--tertiary);
+
+  }
+  #contact-us h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #000;
+  }
+  .text-black {
+    color: #000;
+  }
+
+  #contact-us .content {
+    padding:  20px ;
+    /* border: 1px solid lightgrey; */
+
+  }
+
+  #contact-us h3 {
+    /* font-size: 3.5rem; */
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    color: var(--primary);
+    text-decoration: underline 2px var(--quaternary);
+    text-underline-offset: .5rem;
+    
+  }
+  
+
+  #contact-us h5{
+    margin-top: 1.5rem;
+    font-size:.85rem; 
+  }
+
+  #contact-us ul{
+    padding:0;
+    margin: 0;
+    font-size:.75rem;
+  }
+
+  #contact-us li{
+font-weight: 300;
+  }
+  #contact-us .contact-us-details{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(50px, 1fr));
+    grid-gap: 1rem;
+    /* width: fit-content;   */
+  }
+  #contact-us .branch {
+    display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  /* background-color: tomato; */
+  /* aspect-ratio: 1/1; */
+  }
+  #contact-us p{
+    line-height:1.5em;
+
+  }
+
+#contact-us .form-control {
+border-radius: 0 ;
+  }
+
+
+  #contact-us .contact-form{
+    margin-top:0;
+  }
+
+  .form-control:active,:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #000;
+  
+  }
+  .col-form-label {
+    color: #000;
+    font-weight: 500;
+    font-size:.85rem !important; 
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .form-control  {
+    height: 55px ;
+    border-radius:0!important;
+    margin-bottom:20px;
+  }
+
+  
+  .btn:active:focus {
+		outline: none!important;
+		box-shadow: none!important;
+	}
+  #contact-us .btn:hover{
+    outline: none;
+    box-shadow: none;
+    background: #000;
+  }
+
+
+label.error {
+	font-size: 12px;
+	color: red;
+}
+
+#message {
+	resize: vertical;
+  border-radius: 0;
+  height: 200px;
+}
+#form-message-warning, #form-message-success {
+	display: none;
+}
+#form-message-warning {
+	color: #B90B0B;
+}
+#form-message-success {
+	color: #55A44E;
+	font-size: 18px;
+	font-weight: bold;
+}
+  .submitting {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    display: none;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000;
+  }
+
+  .content
+
+  /* end::contact us section */
   
   
   /* footer */
