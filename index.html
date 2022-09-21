@@ -29,14 +29,33 @@
     <header id="header">
         <div class="header">
             <div class="top-bar ">
+                <div class="language-selector">
+
+                    <div id="google_translate_element" class="language-selector" style="display:none"></div>
+
+                </div>
+
+                <!-- Translate flag END -->
                 <a href="https://www.facebook.com/UnifiedCommunicationNepal/" target="_blank"
                     rel="noopener noreferrer"><i class="fab fa-facebook fa-xs"></i></a>
                 <a href="https://www.instagram.com/unifiedcommunicationnepal/" target="_blank"
                     rel="noopener noreferrer"><i class="fab fa-instagram fa-xs"></i></a>
                 <a href="https://www.linkedin.com/company/unified-communication-pvt-ltd/" target="_blank"><i
                         class="fab fa-linkedin-in fa-xs"></i></a>
-                <!-- <a href=""><i class="fab fa-twitter fa-xs"></i></a> -->
-                <!-- <a href=""><i class="fab fa-youtube fa-xs"></i> </a> -->
+                <a href="https://www.facebook.com/UnifiedCommunicationNepal/" target="_blank"
+                    rel="noopener noreferrer"></a>
+                <a value="ne" id="language" href="#" rel="noopener noreferrer" tolang="ne"
+                    onclick="changeLanguage('ne')">
+                    <!-- <span>nep</span> -->
+                    <img class="nepal" src="assets/flag_nepal.png" alt="nepali language" srcset="">
+                </a>
+                <!-- <div class="vl"></div> -->
+                <div class="headerDivider"></div>
+
+                <a id="language" value="en" href="#" rel="noopener noreferrer" onclick="changeLanguage('en')">
+                    <!-- <span>eng</span> -->
+                    <img src="assets/flag_usa.png" alt="nepali language" srcset="">
+                </a>
 
             </div>
             <div class="nav-bar">
@@ -618,18 +637,79 @@
         <!-- <button class="btn btn-style" onclick="scroll2Top()" id="btn" title="Go to top">Top</button> -->
     </section>
     <script type="module" src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
     <!-- fontawsome 5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
     <!-- owl carousel -->
-    <script src="assets/jQuery/jquery.min.js"></script>
+    <!-- <script src="assets/jQuery/jquery.min.js"></script> -->
     <!-- <script src="owlcarousel/owl.carousel.min.js"></script> -->
 
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDaWLenc_eAZKJuNNZMb6vaJ12OIqm6YM&callback=initMap"></script>
 
+    <!-- email -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- google translate -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                // layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+
+                autoDisplay: true,
+                includedLanguages: 'ne,en',
+            }, 'google_translate_element');
+            // setTimeout(() => {
+            //     changeLangToSV();
+            // }, 500);
+        }
+        function changeLangToSV() {
+            let ele = document.querySelector("#google_translate_element select");
+            ele.selectedIndex = 1;
+            ele.dispatchEvent(new Event("change"));
+        }
+        // function googleTranslateElementInit() {
+        //     setCookie('googtrans', 'ne', 1);
+        //     new google.translate.TranslateElement({ pageLanguage: 'ne', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, includedLanguages: 'ne,en' }, 'google_translate_element');
+        // }
+        // function setCookie(key, value, expiry) {
+        //     var expires = new Date();
+        //     expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
+        //     document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+        // }
+    </script>
+
+    <script>
+        function changeLanguage(lang) {
+            console.log('lang', lang)
+            // var language = document.getElementsById("language").value;
+            console.log('lang 123', language)
+            var selectField = document.querySelector("#google_translate_element select");
+            for (var i = 0; i < selectField.children.length; i++) {
+                var option = selectField.children[i];
+                // find desired langauge and change the former language of the hidden selection-field 
+                if (option.value == lang) {
+                    selectField.selectedIndex = i;
+                    // trigger change event afterwards to make google-lib translate this side
+                    selectField.dispatchEvent(new Event('change'));
+                    break;
+                }
+            }
+        }
+    </script>
+
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+
+    <!-- Flag click handler -->
 
 </body>
 

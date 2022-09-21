@@ -60,7 +60,22 @@ textarea {
   content: " *";
   color: var(--primary);
 }
+.headerDivider {
+  border-left:2px solid black; 
+  height:18px;
+  position:absolute;
+  right:56px;
+  top:2px; 
+}
 
+.vl {
+  border-left: 2px solid var(--primary);
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
 .brand h1 {
   font-size: 3rem;
   text-transform: uppercase;
@@ -149,7 +164,51 @@ box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 #header .top-bar a:hover {
   color: var(--primary);
 }
+.goog-logo-link {
+  display:none !important;
+} 
+  
+.goog-te-gadget{
+  color: transparent !important;
+  font-size: 0!important;
+}
 
+.goog-te-banner{
+  display: none !important;
+  margin-bottom:50px !important;
+}
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+  } 
+body {
+  top: 0px !important; 
+  }
+
+.top-bar  a span{
+  font-size:x-small;
+  font-weight: bold;
+  text-transform:uppercase;
+}
+
+.top-bar a img{
+height:15px;
+object-fit: cover;
+}
+.top-bar a img >.nepal{ 
+  height:10px;
+  padding-bottom: 4px;
+}
+
+.top-bar  a span:active{
+  font-size:x-small;
+  font-weight: bold;
+  color:var(--primary);
+}
+
+
+header .language-selector{
+
+}
 #header .header {
   min-height: 8vh;
   background-color: var(--primary);
@@ -569,10 +628,22 @@ color:var(--primary)
     text-underline-offset: .5rem;
     
   }
-  #contact-us p{
-    line-height:1.5em;
 
+
+  #contact-us .contact-us-details{
+    /* display: grid;
+    grid-template-columns: repeat(2, minmax(50px, 1fr));
+    grid-gap: 1rem;
+    place-items: center; */
+    /* width: fit-content;   */
   }
+  /* #contact-us .branch {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+} */
+
 
   #contact-us h5{
     margin-top: 1.5rem;
@@ -1298,6 +1369,7 @@ color:var(--primary)
   #contact-us li{
 font-weight: 300;
   }
+
   #contact-us .contact-us-details{
     display: grid;
     grid-template-columns: repeat(2, minmax(50px, 1fr));
