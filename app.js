@@ -1,3 +1,5 @@
+import branches from './assets/data/branchesList.json'assert { type: 'json' };
+
 'use strict'
 
 const hamburger= document.querySelector('.header .nav-bar .nav-list .hamburger')
@@ -42,16 +44,18 @@ function changeLanguage(lang) {
 
     let map = L.map('map', {
       center: [26.66221, 87.69396],
-      zoom: 16
+      zoom: 12
   });
 
   let osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 18,
     attribution: '© OpenStreetMap'
   }).addTo(map);
   // add multiple markers--> start from here
   let marker = L.marker([26.66221, 87.69396]).addTo(map);
   marker.bindPopup(`<span class='text-warning' >ISP</span><br/><strong class='text-danger'>Unified Communication Pvt. Ltd.<br/> Head Office</strong>`).openPopup();
+
+  addBranchesMarkers(map)
 
   let Basemaps = {
       "OSM": osm
@@ -68,6 +72,25 @@ function changeLanguage(lang) {
       'Circle':circle
   }
   L.control.layers(Basemaps, Overlaymaps).addTo(map);
+   }
+
+   function addBranchesMarkers(map){
+     let markers;
+     branches.forEach(branch=>{
+       console.log('branch',branch)
+      const lat = Number(branch.coordinates[0]);
+      const lng = Number(branch.coordinates[1]);
+      if (lat === null || lng === null) return;
+      let marker = new L.marker([lat,lng]).addTo(map);
+      marker.bindPopup(`<span class='text-warning' >ISP</span><br/><strong class='text-danger'>${branch.name}</strong>`).openPopup();
+    // markers.addLayer(marker);
+    // map.addLayer(markers)
+     })
+
+// for( let branch of branches){
+// console.log('banch',branch)
+ 
+// }
    }
    function setLegends(map) {
 		const legend = new (L.Control.extend({
