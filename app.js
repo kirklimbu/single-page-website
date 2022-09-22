@@ -15,158 +15,123 @@ hamburger.addEventListener('click', ()=>{
 //   });
 
 //   google maps
+// navigator.geolocation.getCurrentPosition(success, error);
 
-
-
-function initMap() {
-    // console.log('calling google maps')
-// 26.662209494579614, 87.69396259131017
-    // The location of Uluru
-    const unified_damak_location = { lat: 26.66221, lng: 87.69396 };
-    // The map, centered at Uluru
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 16,
-      center: unified_damak_location,
-    });
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-      position: unified_damak_location,
-      map: map,
-    });
-
-    const cityCircle = new google.maps.Circle({
-      strokeColor: "red",
-      strokeOpacity: 0.8,
-      strokeWeight: 1,
-      fillColor: "coral",
-      fillOpacity: 0.35,
-      map,
-      center:{ lat: 26.66221, lng: 87.69396 },
-      radius: 1 * 100,
-    });
-    // legend
-    const iconBase = "https://maps.google.com/mapfiles/kml/shapes/";
-
-    const branches =[
-      
-      {
-        name:'Damak',
-        latlng:'',
-        icon:iconBase
-      },
-      {
-        name:'Haldibari',
-        latlng:'',
-        icon:iconBase
-      },
-      
-       {
-        name:'Dhude',
-        latlng:'',
-        icon:iconBase
-      },
-       {
-        name:'Sanischare',
-        latlng:'',
-        icon:iconBase
-      },
-       {
-        name:'Bolochowk',
-        latlng:'',
-        icon:iconBase
-      },
-      
-      
-      {
-        name:'Campa',
-        latlng:''
-      },
-      {
-        name:'Belari',
-        latlng:''
-      },
-      {
-        name:'Biratchowk',
-        latlng:''
-      },
-      
-      
-    ]
-      
-
-    const features = [
-      {
-        position: new google.maps.LatLng(26.64878218296987, 87.8259752288355),
-        type: "info",
-        name:'Unified Communications, Dudhe'
-        
-      },
-      // JRXM+35V, शिवसताक्षी 57200
-       {
-        position: new google.maps.LatLng(26.647698626323077, 87.83324769098466),
-        type: "info",
-        name:'Unified Communications, Shiva Satakshi (शिवसताक्षी)'
-
-        
-      },
-       {
-        position: new google.maps.LatLng(26.53399668205423, 87.79715769708092),
-        type: "info",
-        name:'Unified Communications, Panch-gachhi'
-
-      },
-       {
-        position: new google.maps.LatLng(26.553996586195744, 87.96087462591693),
-        type: "info",
-        name:'Unified Communications, Haldibari'
-
-      },
-      {
-        position: new google.maps.LatLng( 26.686009853350264, 87.9915935624223),
-        type: "info",
-        name:'Unified Communications, Arjundhara'
-
-      },
-      
-    ]
-
+// language select section
+function changeLanguage(lang) {
+  console.log('lang', (lang))
+  var selectField = document.querySelector("#google_translate_element select");
   
-  features.forEach((feature) => {
-    new google.maps.Marker({
-      position: feature.position,
-      // icon: icons[feature.type].icon,
-      title: feature.name,
-      animation: google.maps.Animation.DROP,
-      map: map,
-    });
+  for (var i = 0; i < selectField.children.length; i++) {
+      var option = selectField.children[i];
+      console.log('selectField',option)
+
+      // find desired langauge and change the former language of the hidden selection-field 
+      if (option.value == lang) {
+          selectField.selectedIndex = i;
+          // trigger change event afterwards to make google-lib translate this side
+          selectField.dispatchEvent(new Event('change'));
+          break;
+      }
+  }
+}
+
+// main office map
+
+  function initMap(){
+
+    let map = L.map('map', {
+      center: [26.66221, 87.69396],
+      zoom: 16
   });
 
-  
-  const legend = document.getElementById("legend");
+  let osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+  // add multiple markers--> start from here
+  let marker = L.marker([26.66221, 87.69396]).addTo(map);
+  marker.bindPopup(`<span class='text-warning' >ISP</span><br/><strong class='text-danger'>Unified Communication Pvt. Ltd.<br/> Head Office</strong>`).openPopup();
 
-  for (const value of branches) {
-    // const type = icons[key];
-    const name = value.name;
-    const icon = value.icon;
-    const div = document.createElement("div");
-    div.innerHTML =  `<ul><li><img src="' + ${icon} + '"> 
-    <strong> ${name}</strong></li></ul>`;
-    legend.appendChild(div);
-
-    google.maps.event.addListener(marker, 'click', (function(marker, value) {
-      // console.log('map clicked',marker,value)
-      return function() {
-        // infowindow.setContent(value);
-        // infowindow.open(map, marker);
-      }
-    })(marker, value));
+  let Basemaps = {
+      "OSM": osm
   }
+  let circle = L.circle([26.66221, 87.69396], {
+    color: '' ,
+    fillColor: 'coral',
+    fillOpacity: 0.5,
+    radius: 200
+}).addTo(map);
+
+  let Overlaymaps = {
+      "Marker": marker,
+      'Circle':circle
+  }
+  L.control.layers(Basemaps, Overlaymaps).addTo(map);
+   }
+   function setLegends(map) {
+		const legend = new (L.Control.extend({
+		  options: { position: "bottomright" },
+		}))();
+		// legend seciton
+		legend.onAdd = function () {
+		  var div = L.DomUtil.create("div", "Branches"),
+			wards = [1, 2, 3, 4, 5],
+			labels = [`वडा १`, `वडा २`, `वडा ३`, `वडा ४`, "वडा ५"];
+		  div.innerHTML += "<strong>जानकारी</strong>" + "<br>";
+		  for (var i = 0; i < wards.length; i++) {
+			div.innerHTML +=
+			  '<i style="background:' +
+			  getColor(wards[i]) +
+			  '"> ` `</i> ' +
+			  `<strong>${labels[i]}</strong>` +
+			  "<br>";
+		  }
+		  return div;
+		};
+		legend.addTo(map);
+  }
+   window.onload=initMap();
+   
 
 
-  map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
-  // scroll to top section
 
-  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// function success(position) {
+//   const coords = position.coords;
+//   const latitude = coords.latitude;
+//   const longitude = coords.longitude;
+//   const accuracy = coords.accuracy;
+
+//   console.log(`Latitude : ${latitude}`);
+//   console.log(`Longitude: ${longitude}`);
+//   console.log(`Accuracy: ${accuracy} m.`);
+
+//   const latLong = [latitude, longitude];
+
+//   const map = L.map('map').setView(latLong, 13);
+
+//   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//       maxZoom: 19,
+//       attribution: '© OpenStreetMap'
+//   }).addTo(map);
+
+//   const marker = L.marker(latLong).addTo(map);
+
+//   const circle = L.circle(latLong, {
+//     color: 'red',
+//     fillColor: '#f03',
+//     fillOpacity: 0.5,
+//     radius: 500
+//   }).addTo(map);
+  
+//   map.on('click', onMapClick);
+// }
+
+
+
+// scroll to top section
+var scrollToTopBtn = document.getElementById("scrollToTopBtn");
   var rootElement = document.documentElement;
 
   function scrollToTop() {
@@ -176,8 +141,6 @@ function initMap() {
       behavior: "smooth"
     })
   }
-}
-  window.initMap = initMap;
 
   // send mail
   // info@unicom.net.np

@@ -14,14 +14,15 @@
     <!-- owl carousel -->
     <!-- <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css"> -->
     <!-- <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css"> -->
+
     <!-- leaflet map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
         integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
         crossorigin="" />
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.js"
         integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-        crossorigin=""></script>
+        crossorigin=""></script>>
+
     <title>Unified Communications</title>
 </head>
 
@@ -44,8 +45,7 @@
                         class="fab fa-linkedin-in fa-xs"></i></a>
                 <a href="https://www.facebook.com/UnifiedCommunicationNepal/" target="_blank"
                     rel="noopener noreferrer"></a>
-                <a value="ne" id="language" href="#" rel="noopener noreferrer" tolang="ne"
-                    onclick="changeLanguage('ne')">
+                <a id="language" value="ne" href="#" rel="noopener noreferrer" onclick="changeLanguage('ne')">
                     <!-- <span>nep</span> -->
                     <img class="nepal" src="assets/flag_nepal.png" alt="nepali language" srcset="">
                 </a>
@@ -54,7 +54,7 @@
 
                 <a id="language" value="en" href="#" rel="noopener noreferrer" onclick="changeLanguage('en')">
                     <!-- <span>eng</span> -->
-                    <img src="assets/flag_usa.png" alt="nepali language" srcset="">
+                    <img src="assets/flag_usa.png" alt="english language" srcset="">
                 </a>
 
             </div>
@@ -303,25 +303,14 @@
         haldi bari: 26.553996586195744, 87.96087462591693,
        arjundhara: 26.686009853350264, 87.9915935624223
      -->
+    <!-- <div tabindex="650" id="map"></div> -->
 
     <section id="office-map">
-        <h3>Our offices</h3>
+        <h3>Head office</h3>
 
         <div id="map"></div>
 
     </section>
-
-    <!-- <section id="contact">
-        <h3>Contact</h3>
-        <p class="leading"> 023-597005
-        </p>
-        <form action="">
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Email">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your message"></textarea>
-            <button class="button">Send</button>
-        </form>
-    </section> -->
 
     <!-- begin::contact us section -->
     <section id="contact-us">
@@ -636,7 +625,10 @@
 
         <!-- <button class="btn btn-style" onclick="scroll2Top()" id="btn" title="Go to top">Top</button> -->
     </section>
-    <script type="module" src="app.js"></script>
+
+
+
+    <script src="app.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -651,8 +643,9 @@
     <!-- <script src="assets/jQuery/jquery.min.js"></script> -->
     <!-- <script src="owlcarousel/owl.carousel.min.js"></script> -->
 
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDaWLenc_eAZKJuNNZMb6vaJ12OIqm6YM&callback=initMap"></script>
+    <!-- <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDaWLenc_eAZKJuNNZMb6vaJ12OIqm6YM&callback=initMap">
+        </script> -->
 
     <!-- email -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
@@ -670,47 +663,39 @@
             //     changeLangToSV();
             // }, 500);
         }
-        function changeLangToSV() {
-            let ele = document.querySelector("#google_translate_element select");
-            ele.selectedIndex = 1;
-            ele.dispatchEvent(new Event("change"));
-        }
-        // function googleTranslateElementInit() {
-        //     setCookie('googtrans', 'ne', 1);
-        //     new google.translate.TranslateElement({ pageLanguage: 'ne', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, includedLanguages: 'ne,en' }, 'google_translate_element');
+        // function changeLangToSV() {
+        //     let ele = document.querySelector("#google_translate_element select");
+        //     ele.selectedIndex = 1;
+        //     ele.dispatchEvent(new Event("change"));
         // }
-        // function setCookie(key, value, expiry) {
-        //     var expires = new Date();
-        //     expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
-        //     document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
-        // }
+
     </script>
 
     <script>
-        function changeLanguage(lang) {
-            console.log('lang', lang)
-            // var language = document.getElementsById("language").value;
-            console.log('lang 123', language)
-            var selectField = document.querySelector("#google_translate_element select");
-            for (var i = 0; i < selectField.children.length; i++) {
-                var option = selectField.children[i];
-                // find desired langauge and change the former language of the hidden selection-field 
-                if (option.value == lang) {
-                    selectField.selectedIndex = i;
-                    // trigger change event afterwards to make google-lib translate this side
-                    selectField.dispatchEvent(new Event('change'));
-                    break;
-                }
-            }
-        }
-    </script>
 
+    </script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
     </script>
 
+    <script>
+        // var map_init = L.map('map', {
+        //     center: [26.66221, 87.69396],
+        //     zoom: 16
+        // });
+        // var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        // }).addTo(map_init);
+        // var marker = L.marker([26.66221, 87.69396]).addTo(map_init);
+        // var Basemaps = {
+        //     "OSM": osm
+        // }
+        // var Overlaymaps = {
+        //     "Marker": marker
+        // }
+        // L.control.layers(Basemaps, Overlaymaps).addTo(map_init);
+    </script>
     <!-- Flag click handler -->
-
 </body>
 
 
