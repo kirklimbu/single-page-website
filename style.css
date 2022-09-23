@@ -24,7 +24,9 @@ li {
   list-style-type: none;
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 /* base styles */
 
 body {
