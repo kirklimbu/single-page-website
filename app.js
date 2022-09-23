@@ -12,31 +12,6 @@ hamburger.addEventListener('click', ()=>{
 
 })
 
-// $(document).ready(function(){
-//     $(".owl-carousel").owlCarousel();
-//   });
-
-//   google maps
-// navigator.geolocation.getCurrentPosition(success, error);
-
-// language select section
-function changeLanguage(lang) {
-  console.log('lang', (lang))
-  var selectField = document.querySelector("#google_translate_element select");
-  
-  for (var i = 0; i < selectField.children.length; i++) {
-      var option = selectField.children[i];
-      console.log('selectField',option)
-
-      // find desired langauge and change the former language of the hidden selection-field 
-      if (option.value == lang) {
-          selectField.selectedIndex = i;
-          // trigger change event afterwards to make google-lib translate this side
-          selectField.dispatchEvent(new Event('change'));
-          break;
-      }
-  }
-}
 
 // main office map
 
@@ -47,15 +22,18 @@ function changeLanguage(lang) {
       zoom: 12
   });
 
-  let osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
+  let osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+
+
+   {
+    maxZoom: 19,
     attribution: '© OpenStreetMap'
   }).addTo(map);
   // add multiple markers--> start from here
   let marker = L.marker([26.66221, 87.69396]).addTo(map);
-  marker.bindPopup(`<span class='text-warning' >ISP</span><br/><strong class='text-danger'>Unified Communication Pvt. Ltd.<br/> Head Office</strong>`).openPopup();
+  marker.bindPopup(`<span class='text-danger' >ISP</span><br/><strong >Unified Communication Pvt. Ltd.<br/> Head Office</strong>`).openPopup();
 
-  addBranchesMarkers(map)
+  addBranchesMarkers(map);
 
   let Basemaps = {
       "OSM": osm
@@ -75,23 +53,15 @@ function changeLanguage(lang) {
    }
 
    function addBranchesMarkers(map){
-     let markers;
      branches.forEach(branch=>{
-       console.log('branch',branch)
       const lat = Number(branch.coordinates[0]);
       const lng = Number(branch.coordinates[1]);
       if (lat === null || lng === null) return;
       let marker = new L.marker([lat,lng]).addTo(map);
-      marker.bindPopup(`<span class='text-warning' >ISP</span><br/><strong class='text-danger'>${branch.name}</strong>`).openPopup();
-    // markers.addLayer(marker);
-    // map.addLayer(markers)
+      marker.bindPopup(`<span class='text-danger' >ISP</span><br/><strong>${branch.name}</strong>`).openPopup();
      })
-
-// for( let branch of branches){
-// console.log('banch',branch)
- 
-// }
    }
+
    function setLegends(map) {
 		const legend = new (L.Control.extend({
 		  options: { position: "bottomright" },
@@ -115,42 +85,6 @@ function changeLanguage(lang) {
 		legend.addTo(map);
   }
    window.onload=initMap();
-   
-
-
-
-
-// function success(position) {
-//   const coords = position.coords;
-//   const latitude = coords.latitude;
-//   const longitude = coords.longitude;
-//   const accuracy = coords.accuracy;
-
-//   console.log(`Latitude : ${latitude}`);
-//   console.log(`Longitude: ${longitude}`);
-//   console.log(`Accuracy: ${accuracy} m.`);
-
-//   const latLong = [latitude, longitude];
-
-//   const map = L.map('map').setView(latLong, 13);
-
-//   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//       maxZoom: 19,
-//       attribution: '© OpenStreetMap'
-//   }).addTo(map);
-
-//   const marker = L.marker(latLong).addTo(map);
-
-//   const circle = L.circle(latLong, {
-//     color: 'red',
-//     fillColor: '#f03',
-//     fillOpacity: 0.5,
-//     radius: 500
-//   }).addTo(map);
-  
-//   map.on('click', onMapClick);
-// }
-
 
 
 // scroll to top section

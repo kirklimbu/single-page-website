@@ -16,12 +16,11 @@
     <!-- <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css"> -->
 
     <!-- leaflet map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-        crossorigin="" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.js"
-        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-        crossorigin=""></script>>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+        integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
+
 
     <title>Unified Communications</title>
 </head>
@@ -32,7 +31,7 @@
             <div class="top-bar ">
                 <div class="language-selector">
 
-                    <div id="google_translate_element" class="language-selector" style="display:none"></div>
+                    <div id="google_translate_element" class="language-selector"></div>
 
                 </div>
 
@@ -45,14 +44,14 @@
                         class="fab fa-linkedin-in fa-xs"></i></a>
                 <a href="https://www.facebook.com/UnifiedCommunicationNepal/" target="_blank"
                     rel="noopener noreferrer"></a>
-                <a id="language" value="ne" href="#" rel="noopener noreferrer" onclick="changeLanguage('ne')">
+                <a id="language" value="ne" href="#" rel="noopener noreferrer" onclick="changeLangToSV('ne')">
                     <!-- <span>nep</span> -->
                     <img class="nepal" src="assets/flag_nepal.png" alt="nepali language" srcset="">
                 </a>
                 <!-- <div class="vl"></div> -->
                 <div class="headerDivider"></div>
 
-                <a id="language" value="en" href="#" rel="noopener noreferrer" onclick="changeLanguage('en')">
+                <a id="language" value="en" href="#" rel="noopener noreferrer" onclick="changeLangToSV('en')">
                     <!-- <span>eng</span> -->
                     <img src="assets/flag_usa.png" alt="english language" srcset="">
                 </a>
@@ -239,6 +238,104 @@
         </div>
     </section> -->
 
+    <!-- <section class="section-plans" id="section-plans">
+        <div class="u-center-text u-margin-bottom-big">
+            <h3 class="heading-secondary">
+                Latest Product & Pricing
+            </h3>
+            <h4 class="">Residential Packages</h4>
+
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-3">
+                <div class="card">
+                    <div class="card__side card__side--front-1">
+                        <div class="card__cta">
+                            <p class="speed">20 Mbps</p>
+                            <div class="card__price-box">
+                                <p class="card__price-only">Only</p>
+                                <p class="card__price-value"> रु 701/<small>month</small></p>
+                            </div>
+                            <a href="#popup" class="btn btn--white">Select</a>
+                        </div>
+                    </div>
+                    <div class="card__side card__side--back card__side--back-1">
+                        <div class="card__details">
+                            <ul>
+                                <li>1 Website</li>
+                                <li>50 GB SSD Storage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="u-center-text u-margin-top-huge">
+            <a href="#" class="btn btn--green">Get Started</a>
+        </div>
+    </section> -->
+
+    <!-- <section id="products">
+        <h3> <strong>Latest Product & Pricing</strong> </h3>
+        <h4 class=" text-center">Residential Plans</h4>
+        <div class="residential">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        20 Mbps</h5>
+                    <div class="content">
+
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">20 Mbps</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">20 Mbps</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">20 Mbps</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">20 Mbps</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="corporate"></div>
+
+    </section> -->
+
     <section id="packages">
         <h3> <strong>Our Packages</strong> </h3>
         <div class="packages">
@@ -279,23 +376,100 @@
         </div>
     </section>
 
-    <section id="coverage-area">
+    <section id="package-details">
+        <!-- <div class="container"> -->
+
+        <h3>Package Details </h3>
+        <table class="table table-bordered">
+            <h5>Residential Packages</h5>
+            <caption>Sharing Ratio 1:8</caption>
+
+            <tr>
+                <td></td>
+                <th scope="col">20 Mbps</th>
+                <th scope="col">50 Mbps</th>
+                <th scope="col">60 Mbps</th>
+                <th scope="col">80 Mbps</th>
+                <th scope="col">100 Mbps</th>
+            </tr>
+            <tr>
+                <th scope="row">1 Month</th>
+                <td>रु 701/-</td>
+                <td>रु 800/-</td>
+                <td>रु 850/-</td>
+                <td>रु 900/-</td>
+                <td>रु 1050/-</td>
+            </tr>
+            <tr>
+                <th scope="row">3 Months</th>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+            <tr>
+                <th scope="row">12 Months</th>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+
+        </table>
+
+
+        <!-- begin::corporate package -->
+        <div class="corporate-package">
+            <table class="table table-bordered">
+                <h5>Corporate Packages</h5>
+                <caption>Sharing Ratio 1:4</caption>
+                <tr>
+                    <td></td>
+
+                    <th scope="col">50 Mbps</th>
+                    <th scope="col">100 Mbps</th>
+                </tr>
+                <tr>
+                    <th scope="row">1 Month</th>
+                    <td>रु 1475/-</td>
+                    <td>रु 2180/-</td>
+                </tr>
+                <tr>
+                    <th scope="row">3 Months</th>
+                    <td>--</td>
+                    <td>--</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">12 Months</th>
+
+                    <td>--</td>
+                    <td>--</td>
+                </tr>
+
+            </table>
+        </div>
+        <!-- end::corporate package -->
+
+        <!-- </div> -->
+    </section>
+
+    <!-- <section id="coverage-area">
         <div id="legend">
             <h3>Branches</h3>
         </div>
 
         <div class="service-area">
             <a href="">
-                <!-- <img src="assets/dedicated service-1.png" alt=""> -->
-                <!-- <h4>Hotliner number</h4> -->
-                <!-- <h5>View more</h5> -->
+                <img src="assets/dedicated service-1.png" alt="">
+                <h4>Hotliner number</h4>
+                <h5>View more</h5>
 
             </a>
         </div>
-
-
-
-    </section>
+    </section> -->
     <!-- 
         dudhe: 26.64878218296987, 87.8259752288355,
         shiva satakshi :26.647698626323077, 87.83324769098466,
@@ -654,20 +828,57 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                // layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-
-                autoDisplay: true,
+                autoDisplay: false,
                 includedLanguages: 'ne,en',
             }, 'google_translate_element');
             // setTimeout(() => {
             //     changeLangToSV();
             // }, 500);
         }
-        // function changeLangToSV() {
-        //     let ele = document.querySelector("#google_translate_element select");
-        //     ele.selectedIndex = 1;
-        //     ele.dispatchEvent(new Event("change"));
-        // }
+        function changeLangToSV(lang) {
+            console.log('lang', lang);
+            let ele = document.querySelector("#google_translate_element select");
+            console.log('ele', ele);
+            // if (!lang) {
+            //     console.log('no lang', lang)
+            //     ele.selectedIndex = 'en';
+            //     return ele.dispatchEvent(new Event("change"));
+            // }
+            if (lang == 'en') {
+                console.log('en lang', lang)
+
+                ele.selectedIndex = 1;
+                return ele.dispatchEvent(new Event("change"));
+            }
+
+            if (lang == 'ne') {
+                console.log('ne lang', lang)
+
+                ele.selectedIndex = 0;
+                return ele.dispatchEvent(new Event("change"));
+            }
+
+
+
+
+
+            // ele.addEventListener("click", () => {
+            //     console.log('clicked lang', lang)
+            //     ele.selectedIndex = 0;
+            //     ele.dispatchEvent(new Event("change"));
+            // })
+            // for (var i = 0; i < selectField.children.length; i++) {
+            //     var option = selectField.children[i];
+            //     console.log('selectField', option)
+
+            //     // find desired langauge and change the former language of the hidden selection-field 
+            //     if (option.value == lang) {
+            //         selectField.selectedIndex = i;
+            //         // trigger change event afterwards to make google-lib translate this side
+            //         selectField.dispatchEvent(new Event('change'));
+            //         break;
+            //     }
+        }
 
     </script>
 
@@ -675,8 +886,9 @@
 
     </script>
 
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+        </script>
 
     <script>
         // var map_init = L.map('map', {
